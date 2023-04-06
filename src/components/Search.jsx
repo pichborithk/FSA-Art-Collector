@@ -32,6 +32,7 @@ const Search = ({ setIsLoading, setSearchResults }) => {
   async function handleSubmit(event) {
     event.preventDefault();
     setIsLoading(true);
+
     try {
       const newSearchResults = await fetchQueryResults({
         century,
@@ -42,8 +43,9 @@ const Search = ({ setIsLoading, setSearchResults }) => {
       setSearchResults(newSearchResults);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
-    setIsLoading(false);
   }
 
   return (

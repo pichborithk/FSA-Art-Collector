@@ -1,6 +1,6 @@
-const Loading = () => {
+const Loading = ({ isLoading }) => {
   return (
-    <div id='loading'>
+    <div id='loading' className={isLoading ? 'active' : ''}>
       <h2 className='message'>Searching...</h2>
     </div>
   );
