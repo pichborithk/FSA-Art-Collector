@@ -27,15 +27,16 @@ const Feature = ({ featuredResult, setIsLoading, setSearchResults }) => {
             <span className='title'>Dimensions</span>
             <span className='content'>{featuredResult.dimensions}</span>
             <span className='title'>Person</span>
-            {featuredResult.people.map((person, index) => (
-              <Searchable
-                key={index}
-                searchTerm='person'
-                searchValue={person.displayname}
-                setIsLoading={setIsLoading}
-                setSearchResults={setSearchResults}
-              />
-            ))}
+            {featuredResult.peoplecount &&
+              featuredResult.people.map((person, index) => (
+                <Searchable
+                  key={index}
+                  searchTerm='person'
+                  searchValue={person.displayname}
+                  setIsLoading={setIsLoading}
+                  setSearchResults={setSearchResults}
+                />
+              ))}
             <span className='title'>Department</span>
             <span className='content'>{featuredResult.department}</span>
             <span className='title'>Division</span>
@@ -50,9 +51,10 @@ const Feature = ({ featuredResult, setIsLoading, setSearchResults }) => {
             <span className='content'>{featuredResult.creditline}</span>
           </section>
           <section className='photos'>
-            {featuredResult.images.map((image) => (
-              <img src={image.baseimageurl} alt={image.copyright} />
-            ))}
+            {featuredResult.imagecount &&
+              featuredResult.images.map((image) => (
+                <img src={image.baseimageurl} alt={image.copyright} />
+              ))}
           </section>
         </div>
       )}
