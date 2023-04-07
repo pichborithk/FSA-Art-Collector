@@ -20,8 +20,8 @@ const Search = ({ setIsLoading, setSearchResults }) => {
         const newCenturyList = await fetchAllCenturies();
         setCenturyList(newCenturyList);
         setClassificationList(newClassificationList);
-        // console.log(newCenturyList);
-        // console.log(newClassificationList);
+        console.log(newCenturyList);
+        console.log(newClassificationList);
       } catch (error) {
         console.error(error);
       }
@@ -39,7 +39,7 @@ const Search = ({ setIsLoading, setSearchResults }) => {
         classification,
         queryString,
       });
-      console.log(newSearchResults);
+      // console.log(newSearchResults);
       setSearchResults(newSearchResults);
     } catch (error) {
       console.error(error);
